@@ -47,8 +47,11 @@ def osc_callback(f):
             params = inspect.signature(f).parameters
             has_varargs = any(param.kind == inspect.Parameter.VAR_POSITIONAL for param in params.values())
             if not has_varargs:
-                n = len(inspect.getargspec(f)[0]) - 1
-                r = f(self, *args[0:n])
+                # Count the args, filtering out *args (VAR_POSITIONAL) and **kwargs (VAR_KEYWORD)
+                arg_count = len([param for param in params.values() 
+                    if param.kind == inspect.Parameter.POSITIONAL_OR_KEYWORD]) - 1
+                #n = len(inspect.getargspec(f)[0]) - 1
+                r = f(self, *args[0:arg_count])
             else:
                 r = f(self, *args)
 

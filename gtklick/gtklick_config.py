@@ -65,7 +65,7 @@ class GTKlickConfig(object):
     def __init__(self):
         self.cfgfile = os.path.expanduser('~/.gtklickrc')
 
-        self.parser = configparser.SafeConfigParser()
+        self.parser = configparser.ConfigParser()
 
         self.parser.add_section('preferences')
         self.parser.add_section('view')

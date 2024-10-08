@@ -13,9 +13,9 @@ from gi.repository import Gtk
 
 import math
 
-from klick_backend import make_method
-from misc import gui_callback, osc_callback
-import misc
+from gtklick.klick_backend import make_method
+from gtklick.misc import gui_callback, osc_callback
+from gtklick import misc
 
 
 class PreferencesDialog:

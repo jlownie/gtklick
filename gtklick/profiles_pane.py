@@ -14,8 +14,8 @@ from gi.repository import GObject
 
 import cgi
 
-import gtklick_config
-import misc
+from gtklick import gtklick_config
+from gtklick import misc
 
 
 class ProfilesPane:

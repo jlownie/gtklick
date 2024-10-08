@@ -26,13 +26,12 @@ import locale
 import builtins
 builtins._ = gettext.gettext
 
-#from . import klick_backend
-import klick_backend
-import gtklick_config
-import main_window
-import profiles_pane
-import preferences_dialog
-import misc
+from gtklick import klick_backend
+from gtklick import gtklick_config
+from gtklick import main_window
+from gtklick import profiles_pane
+from gtklick import preferences_dialog
+from gtklick import misc
 
 
 class GTKlick:

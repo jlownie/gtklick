@@ -7,9 +7,9 @@ Requirements:
 =============
 
 * klick >= 0.11.0 [http://das.nasophon.de/klick/]
-* pyliblo >= 0.7.0 [http://das.nasophon.de/pyliblo/]
+* pyliblo (`pyliblo3` in pip) >= 0.7.0 [http://das.nasophon.de/pyliblo/]
 * Python >= 2.5
-* PyGTK
+* PyGTK (`pygobject` in pip)
 
 
 Installation:

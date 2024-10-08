@@ -42,7 +42,11 @@ def osc_callback(f):
 
             # call function with the correct number of arguments, to allow osc callbacks to omit
             # some of pyliblo's callback arguments
-            if inspect.getargspec(f)[1] == None:
+
+            # Check if there are any variable positional arguments (*args)
+            params = inspect.signature(f).parameters
+            has_varargs = any(param.kind == inspect.Parameter.VAR_POSITIONAL for param in params.values())
+            if not has_varargs:
                 n = len(inspect.getargspec(f)[0]) - 1
                 r = f(self, *args[0:n])
             else:

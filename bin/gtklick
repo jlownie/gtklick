@@ -10,13 +10,14 @@
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 
-
-from gtklick.gtklick import GTKlick
+# Load system modules
 import sys
 import os.path
+from gtklick.gtklick import GTKlick
 
+# Work out directory paths
 bin_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
-share_dir = os.path.join(os.path.split(bin_dir)[0], 'share/gtklick')
+share_dir = os.path.join(os.path.split(bin_dir)[0], 'share')
 locale_dir = os.path.join(os.path.split(bin_dir)[0], 'share/locale')
 
 app = GTKlick(sys.argv[1:], share_dir, locale_dir)
